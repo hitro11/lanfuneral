@@ -9,18 +9,28 @@
     background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.container-fluid h2 {
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Niconne', cursive;
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 30px;
 }
+
+
+.tribute {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
 
 .poem  {
     font-family: 'Niconne', cursive;
     font-size: 28px;
     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
+
 
 .portrait {
     display: block;
@@ -63,24 +73,32 @@
     margin-top: -10px
 }
 
-.msg {
-    font-family: 'Alegreya Sans', sans-serif;
+.msg  {
     border: 2px ridge;
     margin: 20px;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.msg-header {
+.msg-name {
+    font-size: 40px;
+}
+
+.msg-msg {
     font-family: 'Alegreya Sans', sans-serif;
+    font-size: 18px;
+}
+
+
+.msg-header {
+    font-family: 'Niconne', cursive;
     font-size: 70px;
     text-align: center;
 }
 
-.msg-prompt {
-     font-family: 'Alegreya Sans', sans-serif;
+.msg-prompt      {
      font-size: 35px;
-     margin-bottom: 20px;
+     margin-bottom: 30px;
 }
 
 hr {
