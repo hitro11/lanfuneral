@@ -19,19 +19,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.tribute {
+#tribute-text {
     text-align: center;
-    font-size: 35px;
-    margin-bottom: 30px;
+    font-size: 40px;
+    margin-bottom: 60px;
     margin-top: -10px;
 }
 
+.info h1,
+.info h2 {
+    text-align: center;
+    font-family: 'Tangerine', cursive;
+    font-weight: bold;
+    
+}
 
-.poem  {
+.info h1 {
+    font-size: 90px;
+}
+
+.info h2 {
+    font-size: 50px;
+    margin-top: -10px
+}
+
+#story   {
+    text-align: center;
     font-family: 'Niconne', cursive;
     font-size: 28px;
+    margin-top: -20px;
+}
+
+
+.poem-1,
+.poem-2 {
+    font-family: 'Niconne', cursive;
+    font-size: 27px;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 
@@ -63,20 +88,6 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
-.info h1 {
-    text-align: center;
-    font-family: 'Tangerine', cursive;
-    font-weight: bold;
-    font-size: 90px;
-}
-
-.info h2 {
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Tangerine', cursive;
-    font-weight: bold;
-    margin-top: -10px
-}
 
 .msg  {
     color: var(--col1);

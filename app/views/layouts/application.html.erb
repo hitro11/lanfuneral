@@ -12,16 +12,23 @@
 
 <header class="jumbotron site-header">
   <div class="container-fluid">
-    <h2 class="tribute">A tribute to a loving husband, dad, grandad, and great grandad</h2>
+    <h2 id="tribute-text">A tribute to a loving husband, dad, grandad, and great grandad</h2>
     <div class="row">
-      <div class="poem col-md-3">
+      
+       <div class=" info col-md-4 col-md-push-4">
+          <%= image_tag("portrait.jpg", :class => "portrait", :width => "25%", :alt => "Leslie Avelyn Nazareth") %>
+          <h1 class="name">Leslie Avelyn Nazareth</h1>
+          <h2 class="date">19/08/1921 - 26/12/2017</h2>
+      </div>
+      
+      <div class="poem-1 col-md-4 col-md-pull-4">
           Dad, we don’t think of you as gone away</br>
           As your journey’s just begun,</br>
           Life holds so many facets</br>
           This earth is only one.</br> </br>
           
           We just think of you as resting</br>
-          In a place of warmth and prace</br>
+          In a place of warmth and peace</br>
           Where there are no days and years</br>
           And neither sadness and tears.</br> </br>
           
@@ -35,14 +42,8 @@
           That you have passed away.</br> 
       </div>
       
-      <div class=" info col-md-6">
-          <%= image_tag("portrait.jpg", :class => "portrait", :width => "25%", :alt => "Leslie Avelyn Nazareth") %>
-          <h1 class="name">Leslie Avelyn Nazareth</h1>
-          <h2 class="date">19/08/1921 - 26/12/2017</h2>
-      </div>
       
-      
-      <div class="poem col-md-3">
+      <div class="poem-2 col-md-4 col-md-4">
           We will always think of you as living</br>
           In the hearts of those you touched</br>
           For nothing loved is ever lost</br>
@@ -51,7 +52,7 @@
           Your life well lived ls a legacy </br>
           Of joy and pride and pleasure </br>
           A living lasting memory </br>
-          Our greateful hearts will treasure </br></br>
+          Our grateful hearts will treasure </br></br>
           
           So rest in peace dearest Dad</br>
           And thank you for all you’ve done</br>
@@ -59,6 +60,23 @@
           The crown you’ve truly won.</br>
       </div>
     </div>
+    
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div id="story" class="col-md-6">
+      Leslie Nazareth was born  on Aug 19, 1921 to Peter and Ruby Nazareth. Leslie was raised first in Ghatkopar and then in Nazarene 
+      Villa, Chembur,  along with his 6 siblings. He completed his studies in Sydenham College, Mumbai. He married his childhood 
+      sweetheart, Dr. Olga DaCosta in 1949 and celebrated their Golden wedding anniversary in Chennai in 1999 along with their 3
+      children Carol/David Edwin/Susan and Adrian/Zelia
+      and two grand children Sarah and Rohit. After a very long career with Shaw Wallace he retired at the young age of 55
+      to do social and  charitable work. Leslie was known for his wit and great sense of humour. He had several interests but
+      was passionate about golf and bridge. He spent the last last 2.5 years of his life with his youngest child Adrian in Canada 
+      where he died peacefully on Dec 26, 2017.
+    </div>
+    <div class="col-md-3"></div>
+    </div>
+    
+    
     
     <div class="container">
         <%= image_tag("20.jpg", :class => "pics w3-animate-left") %>
@@ -104,27 +122,20 @@
     </div>
     
      <div class="controls container">
-        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="w3-circle w3-black" onclick="pauseSlideShow()">||</button>
-        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        <button class="w3-button w3-display-left" onclick="slideIncrement(-1)">&#10094;</button>
+        <button class="w3-circle w3-black" onclick="togglePlayPause">||</button>
+        <button class="w3-button w3-display-right" onclick="slideIncrement(1)">&#10095;</button>
     </div>
     
-    <div class="controls container">
-      <%= audio_tag("song2.mp3", controls: true) %>
-    </div>
-     
-          
-   
-    
-    
-    
+    <!--<div class="controls container">-->
+    <!--  <%= audio_tag("song2.mp3", controls: true) %>-->
+    <!--</div>-->
   </div>
 </header>
   
-  <div class="container">
-    <%= yield %>
-  </div>
-
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
@@ -133,18 +144,18 @@
 <script>
 
   var slideIndex = 0;
-  var paused = false;
-  carousel();
-  plusDivs(1);
+  var playing = true;
+  var slideInterval = setInterval(carousel,2500);
   
-  function plusDivs(n) {
-    showDivs(slideIndex += n);
+  
+  function slideIncrement(n) {
+    showSlide(slideIndex += n);
   }
 
-  function showDivs(n) {
+  function showSlide(n) {
       var i;
       var x = document.getElementsByClassName("pics");
-      if (n > x.length) {slideIndex = 1} 
+      if (n > x.length) {slideIndex = 0} 
       if (n < 1) {slideIndex = x.length} ;
       for (i = 0; i < x.length; i++) {
           x[i].style.display = "none"; 
@@ -153,14 +164,22 @@
   }
   
   function pauseSlideShow() {
-    if (paused == true) { paused = false; }
-   if (paused == false) { paused = true; }
+    playing = false;
+    clearInterval(slideInterval);
   }
   
+  function playSlideshow(){
+  	playing = true;
+  	slideInterval = setInterval(carousel,2500);
+  }  
+
+  function togglePlayPause() {
+    if(playing){ pauseSlideshow(); }
+    else{ playSlideshow(); }
+  };
   
   function carousel() {
-    if (!paused) {
-       var i;
+      var i;
       var x = document.getElementsByClassName("pics");
       for (i = 0; i < x.length; i++) {
         x[i].style.display = "none"; 
@@ -168,7 +187,6 @@
       slideIndex++;
       if (slideIndex > x.length) {slideIndex = 1} 
       x[slideIndex-1].style.display = "block"; 
-      setTimeout(carousel, 3500); // Change image every 2 seconds
-    }
   }
+  
 </script>
