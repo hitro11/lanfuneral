@@ -9,6 +9,13 @@
     background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.container-fluid h2 {
+    font-family: 'Niconne', cursive;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
 .poem  {
     font-family: 'Niconne', cursive;
     font-size: 25px;
@@ -33,6 +40,8 @@
 }  
 
 .controls  {
+    text-align: center;
+    margin-top: 10px;
     display: block;
     margin: auto;
     margin-top: 10px;
