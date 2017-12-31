@@ -1,0 +1,17 @@
+<div class="container-fluid">
+
+    <h1 class="msg-header">Messages</h1>
+    <% @posts.each do |post| %>
+      <div class="msg">
+        <h2 class="msg-name"><%= post.title %></h2>
+        <h4 class="msg-msg"><%= post.body %></h4>
+      </div>
+    <% end %>
+    <a name="lastcomment"></a>
+    
+    <hr>
+    
+    <h2 class="msg-prompt">Leave a message below: </h2>
+    <%= render 'form' %>
+    
+</div>

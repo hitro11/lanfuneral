@@ -1,0 +1,83 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.site-header{
+    background: #B79891;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #94716B, #B79891);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.poem  {
+    font-family: 'Niconne', cursive;
+    font-size: 25px;
+}
+
+.portrait {
+    display: block;
+    margin: auto;
+    width: 340px;
+    height: 410px
+}
+
+
+.pics {
+     display: block;
+     margin: auto;
+     margin-top: 30px;
+     width: 530px;
+     height: 350px;
+     border: 2px solid;
+}  
+
+.controls  {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    
+}
+
+.info h1 {
+    text-align: center;
+    font-family: 'Tangerine', cursive;
+    font-weight: bold;
+    font-size: 80px;
+}
+
+.info h2 {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Tangerine', cursive;
+    font-weight: bold;
+    margin-top: -10px
+}
+
+.msg {
+    font-family: 'Alegreya Sans', sans-serif;
+    border: 2px ridge;
+    margin: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.msg-header {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 70px;
+    text-align: center;
+}
+
+.msg-prompt {
+     font-family: 'Alegreya Sans', sans-serif;
+     font-size: 35px;
+     margin-bottom: 20px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-top: 5px solid;
+    padding: 0;
+}

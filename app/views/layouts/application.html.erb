@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leslie Avelyn Nazareth</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Great+Vibes|Niconne|Tangerine" rel="stylesheet">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header class="jumbotron site-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="poem col-md-3">
+          Dad, we don’t think of you as gone away</br>
+          As your journey’s just begun,</br>
+          Life holds so many facets</br>
+          This earth is only one.</br> </br>
+          
+          We just think of you as resting</br>
+          In a place of warmth and comfort</br>
+          Where there are no days and years</br>
+          And not even sadness and tears.</br> </br>
+          
+          Dad you were always kind and caring</br>
+          And so understanding too</br>
+          And if help was ever needed Dad</br>
+          It always came from you.</br>
+      </div>
+      
+      <div class=" info col-md-6">
+          <%= image_tag("portrait.jpg", :class => "portrait", :width => "25%", :alt => "Leslie Avelyn Nazareth") %>
+          <h1 class="name">Leslie Avelyn Nazareth</h1>
+          <h2 class="date">19/08/1921 - 26/12/2017</h2>
+      </div>
+      
+      
+      <div class="poem col-md-3">
+          How we wish that you could know today</br>
+          How great is our sadness</br>
+          That you have passed away.</br> </br>
+          
+          We will always think of you as living</br>
+          In the hearts of those you touched</br>
+          For nothing loved is ever lost</br>
+          And you were loved so much.</br> </br>
+          
+          So rest in peace dearest Dad</br>
+          And thank you for all you’ve done</br>
+          As we pray to God to give you</br>
+          The crown you’ve truly won.</br>
+      </div>
+    </div>
+    
+    <div class="container">
+              <%= image_tag("17.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("18.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("19.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("11copy.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("12copy.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("13copy.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("14copy.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("10.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("16.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("1.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("2.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("3.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("4.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("5.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("6.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("7.jpg", :class => "pics w3-animate-left") %>
+              <%= image_tag("8.jpg", :class => "pics w3-animate-left") %>
+          </div>
+          
+    <div class="controls container">
+        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-circle w3-black" onclick="pauseSlideShow()">||</button>
+        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+    </div>
+    
+  </div>
+</header>
+  
+  <div class="container">
+    <%= yield %>
+  </div>
+
+
+</body>
+</html>
+
+
+<script>
+
+  var slideIndex = 0;
+  var paused = false;
+  carousel();
+  plusDivs(1);
+  
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("pics");
+      if (n > x.length) {slideIndex = 1} 
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none"; 
+      }
+      x[slideIndex-1].style.display = "block"; 
+  }
+  
+  function pauseSlideShow() {
+    if (paused == true) { paused = false; }
+   if (paused == false) { paused = true; }
+  }
+  
+  
+  function carousel() {
+    if (!paused) {
+       var i;
+      var x = document.getElementsByClassName("pics");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+      }
+      slideIndex++;
+      if (slideIndex > x.length) {slideIndex = 1} 
+      x[slideIndex-1].style.display = "block"; 
+      setTimeout(carousel, 3500); // Change image every 2 seconds
+    }
+  }
+</script>
